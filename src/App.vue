@@ -16,9 +16,12 @@ export default{
   <HeaderApp/>
 
   <MainApp/>
-  
+
 </template>
 
-<style scoped>
+<style lang="scss">
+  @use "./styles/partials/variables" as *;
+  @use "./styles/general.scss" as *;
+  @use "../node_modules/bootstrap/scss/bootstrap.scss"
 
 </style>
