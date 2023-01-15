@@ -4,12 +4,10 @@ export default {
 }
 </script>
 
-<template lang="">
-  <div>
-    main
-  </div>
+<template>
+
 </template>
 
-<style lang="">
+<style lang="scss">
   
 </style>
