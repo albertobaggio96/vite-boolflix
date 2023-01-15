@@ -40,7 +40,6 @@ export default {
 <template>
   <header>
     <input type="text" v-model="searchText" @keyup.enter="getApi()">
-    <div v-for="film in store.filmsList">{{film.title}}, {{film.original_title}}, {{film.original_language}}, {{film.vote_average}}</div>
   </header>
 </template>
 
