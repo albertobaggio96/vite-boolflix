@@ -22,8 +22,14 @@ export default {
       imgPath = this.flagsAvailable.includes(imgPath) ? imgPath : "rainbow";
       return new URL(`../assets/img/${imgPath}.png`, import.meta.url).href;
     },
+
     isFlagAvailable(imgPath){
       this.getImgPath (imgPath);
+    },
+
+    getUntilFiveStar(element){
+      let fiveStar = Math.round(element.vote_average / 2)
+      return fiveStar
     }
   },
 }
@@ -39,7 +45,7 @@ export default {
         :originalTitle="film.original_title" 
         :originalLanguageFlag="getImgPath(film.original_language)"
         :originalLanguage="film.original_language"
-        :voteAverage="film.vote_average"
+        :voteAverage="getUntilFiveStar(film)"
         :posterPath="film.poster_path"/>
     </article>
 
@@ -51,7 +57,7 @@ export default {
         :originalTitle="TVShow.original_name" 
         :originalLanguageFlag="getImgPath(TVShow.original_language)"
         :originalLanguage="TVShow.original_language"
-        :voteAverage="TVShow.vote_average"
+        :voteAverage="getUntilFiveStar(TVShow)"
         :posterPath="TVShow.poster_path"/>
     </article>
 
