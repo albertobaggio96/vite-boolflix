@@ -8,14 +8,15 @@ export default {
     return {
       store,
       searchText: "",
-      apiSRC: "https://api.themoviedb.org/3/search/movie",
+      apiMovieURL: "https://api.themoviedb.org/3/search/movie",
+      apiTVShowURL: "https://api.themoviedb.org/3/search/tv",
       apiKey: "7dadc080d7d03f1afb5d7530f5f79af4"
 
     }
   },
   methods: {
     getApi() {
-      axios.get(this.apiSRC, {
+      axios.get(this.apiMovieURL, {
         params: {
           api_key : this.apiKey,
           query : this.searchText,
@@ -32,6 +33,7 @@ export default {
         .then(function () {
           // always executed
         });
+      
     }
   },
 }
