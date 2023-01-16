@@ -18,7 +18,7 @@ export default {
   data(){
     return{
       store,
-      flagsAvailable: ["de", "en", "es", "fi", "fr", "it", "ja", "ko", "pl", "zh"]
+      flagsAvailable: ["de", "en", "es", "fi", "fr", "it", "ja", "ko", "pl", "zh"],
     }
   },
   methods:{
@@ -32,9 +32,9 @@ export default {
     },
 
     getUntilFiveStar(element){
-      let fiveStar = Math.round(element.vote_average / 2)
+      let fiveStar = Math.ceil(element.vote_average / 2)
       return fiveStar
-    }
+    },
   },
 }
 </script>
@@ -43,8 +43,6 @@ export default {
   <main>
 
     <h1>Film</h1>
-    <font-awesome-icon icon="fa-solid fa-star" />
-    <font-awesome-icon icon="fa-regular fa-star" />
     <article v-for="film in store.filmsList">
       <FilmApp  
         :title="film.title" 

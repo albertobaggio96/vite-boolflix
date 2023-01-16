@@ -27,7 +27,8 @@ export default {
   <span>{{ title }}, </span>
   <span>{{ originalTitle }}, </span>
   <img :src="originalLanguageFlag" :alt="originalLanguage">
-  <span>{{ voteAverage }}</span>
+  <font-awesome-icon icon="fa-solid fa-star" v-for="star in voteAverage"/>
+  <font-awesome-icon icon="fa-regular fa-star"  v-for="star in 5 - voteAverage"/>
 
 </template>
 
