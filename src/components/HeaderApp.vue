@@ -34,6 +34,23 @@ export default {
           // always executed
         });
       
+        axios.get(this.apiTVShowURL, {
+        params: {
+          api_key : this.apiKey,
+          query : this.searchText,
+        }
+      })
+        .then((response) =>{
+          console.log(response.data.results);
+          this.store.TVShowList = response.data.results
+          console.log(this.store.TVShowList)
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .then(function () {
+          // always executed
+        });
     }
   },
 }

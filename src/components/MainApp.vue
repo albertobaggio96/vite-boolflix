@@ -24,6 +24,9 @@ export default {
       {{film.title}}, {{film.original_title}}, <img v-if="flagsAvailable.includes(film.original_language)" :src="getImgPath(film.original_language)" :alt="film.original_language"> <img v-else src="../assets/img/rainbow.png" :alt="film.original_language">, {{film.vote_average}}
     </div>
     <h1>TV series</h1>
+    <div v-for="TVShow in store.TVShowList">
+      {{TVShow.name}}, {{TVShow.original_name}}, <img v-if="flagsAvailable.includes(TVShow.original_language)" :src="getImgPath(TVShow.original_language)" :alt="TVShow.original_language"> <img v-else src="../assets/img/rainbow.png" :alt="TVShow.original_language">, {{TVShow.vote_average}}
+    </div>
   </main>
 </template>
 
