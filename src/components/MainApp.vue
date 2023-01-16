@@ -4,15 +4,13 @@
 import { store } from "../store.js";
 
 // import components
-import FilmApp from "./main-components/FilmsApp.vue"
-import TVSeriesApp from "./main-components/TVSeriesApp.vue"
+import ComponentFilmSeries from "./main-components/ComponentFilmSeries.vue"
 
 export default {
   name: "MainApp",
 
   components:{
-    FilmApp,
-    TVSeriesApp,
+    ComponentFilmSeries,
   },
 
   data(){
@@ -44,7 +42,7 @@ export default {
 
     <section class="d-flex">
       <article v-for="film in store.filmsList">
-        <FilmApp  
+        <ComponentFilmSeries  
           :title="film.title" 
           :originalTitle="film.original_title" 
           :originalLanguageFlag="getImgPath(film.original_language)"
@@ -56,13 +54,13 @@ export default {
     
     <section class="d-flex">
       <article v-for="TVShow in store.TVShowList">
-        <TVSeriesApp 
+        <ComponentFilmSeries 
           :title="TVShow.name" 
           :originalTitle="TVShow.original_name" 
           :originalLanguageFlag="getImgPath(TVShow.original_language)"
           :originalLanguage="TVShow.original_language"
           :voteAverage="getUntilFiveStar(TVShow)"
-          :posterPath="TVShow.poster_path"/>
+          :posterPath="TVShow.poster_path"/>\
       </article>
     </section>
 
