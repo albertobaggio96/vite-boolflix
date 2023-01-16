@@ -60,6 +60,7 @@ export default {
 <template>
   <header>
     <input type="text" v-model="searchText" @keyup.enter="getApi()">
+    <button @click="getApi()">Cerca</button>
   </header>
 </template>
 
