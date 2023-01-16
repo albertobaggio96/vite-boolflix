@@ -1,16 +1,20 @@
 <script>
 
-import { store } from "../store";
+// import store.js
+import { store } from "../store.js";
 
+// import components
 import FilmApp from "./main-components/FilmsApp.vue"
 import TVSeriesApp from "./main-components/TVSeriesApp.vue"
 
 export default {
   name: "MainApp",
+
   components:{
     FilmApp,
     TVSeriesApp,
   },
+
   data(){
     return{
       store,
@@ -37,8 +41,10 @@ export default {
 
 <template>
   <main>
-    <h1>Film</h1>
 
+    <h1>Film</h1>
+    <font-awesome-icon icon="fa-solid fa-star" />
+    <font-awesome-icon icon="fa-regular fa-star" />
     <article v-for="film in store.filmsList">
       <FilmApp  
         :title="film.title" 
@@ -50,7 +56,6 @@ export default {
     </article>
 
     <h1>TV series</h1>
-
     <article v-for="TVShow in store.TVShowList">
       <TVSeriesApp 
         :title="TVShow.name" 

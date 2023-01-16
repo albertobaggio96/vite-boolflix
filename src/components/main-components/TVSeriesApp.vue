@@ -1,4 +1,5 @@
 <script>
+// import component
 import PosterApp from './PosterApp.vue';
 
 export default {
