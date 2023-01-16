@@ -58,9 +58,12 @@ export default {
 </script>
 
 <template>
-  <header>
-    <input type="text" v-model="searchText" @keyup.enter="getApi()">
-    <button @click="getApi()">Cerca</button>
+  <header class="bg-black py-4 d-flex align-items-center">
+    <h1 class="text-danger ps-3 me-auto">BOOLFIX</h1>
+    <div class="pe-3 d-flex">
+      <input type="text" v-model="searchText" @keyup.enter="getApi()" class="me-2 form-control">
+      <button @click="getApi()" class="btn btn-light">Cerca</button>
+    </div>
   </header>
 </template>
 
