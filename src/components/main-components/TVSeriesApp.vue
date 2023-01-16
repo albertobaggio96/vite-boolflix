@@ -2,31 +2,20 @@
 export default {
   name: "TVShowApp",
   props: [
-    "TVShow", 
-    "flagsAvailable"
+  "title",
+  "originalTitle",
+  "originalLanguage",
+  "originalLanguageFlag",
+  "voteAverage"
   ],
-  data(){
-    return{
-
-    }
-  },
-  methods: {
-    getImgPath(imgPath){
-      return new URL(`../../assets/img/${imgPath}.png`, import.meta.url).href;
-    }
-  },
 }
 </script>
 
 <template>
-  <div>
-
-    <span>{{ TVShow.name }}, </span>
-    <span>{{ TVShow.original_name }}, </span>
-    <img :src="flagsAvailable.includes(TVShow.original_language) ? getImgPath(TVShow.original_language) : getImgPath(`rainbow`)" :alt="TVShow.original_language">
-    <span>{{ TVShow.vote_average }}</span>
-
-  </div>
+    <span>{{ title }}, </span>
+    <span>{{ originalTitle }}, </span>
+    <img :src="originalLanguageFlag" :alt="originalLanguage">
+    <span>{{ voteAverage }}</span>
 </template>
 
 <style lang="scss">
