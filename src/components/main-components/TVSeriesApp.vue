@@ -21,7 +21,7 @@ export default {
 
 <template>
 
-  <PosterApp :posterPath="posterPath"/>
+  <PosterApp :posterPath="posterPath" :title="title"/>
   
   <span>{{ title }}, </span>
   <span>{{ originalTitle }}, </span>

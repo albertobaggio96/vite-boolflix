@@ -2,7 +2,10 @@
 export default {
   name: "PosteApp",
 
-  props:["posterPath"],
+  props:[
+    "posterPath",
+    "title"
+  ],
 
   data(){
     return{
@@ -20,7 +23,7 @@ export default {
 
 <template>
   <div>
-    <img :src="getPoster()" alt="">
+    <img :src="getPoster()" :alt="title">
   </div>
 </template>
 
