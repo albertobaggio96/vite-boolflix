@@ -4,6 +4,7 @@ import { store } from "../store";
 import axios from 'axios';
 
 export default {
+  name: "HeaderApp",
   data() {
     return {
       store,

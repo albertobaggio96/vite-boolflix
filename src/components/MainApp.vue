@@ -2,7 +2,15 @@
 
 import { store } from "../store";
 
+import FilmApp from "./main-components/FilmsApp.vue"
+import TVSeriesApp from "./main-components/TVSeriesApp.vue"
+
 export default {
+  name: "MainApp",
+  components:{
+    FilmApp,
+    TVSeriesApp,
+  },
   data(){
     return{
       store,
@@ -10,9 +18,7 @@ export default {
     }
   },
   methods:{
-    getImgPath(imgPath){
-      return new URL(`../assets/img/${imgPath}.png`, import.meta.url).href;
-    }
+    
   },
 }
 </script>
@@ -20,13 +26,17 @@ export default {
 <template>
   <main>
     <h1>Film</h1>
-    <div v-for="film in store.filmsList">
-      {{film.title}}, {{film.original_title}}, <img v-if="flagsAvailable.includes(film.original_language)" :src="getImgPath(film.original_language)" :alt="film.original_language"> <img v-else src="../assets/img/rainbow.png" :alt="film.original_language">, {{film.vote_average}}
-    </div>
+
+    <article v-for="film in store.filmsList">
+      <FilmApp :film="film" :flagsAvailable="flagsAvailable"/>
+    </article>
+
     <h1>TV series</h1>
-    <div v-for="TVShow in store.TVShowList">
-      {{TVShow.name}}, {{TVShow.original_name}}, <img v-if="flagsAvailable.includes(TVShow.original_language)" :src="getImgPath(TVShow.original_language)" :alt="TVShow.original_language"> <img v-else src="../assets/img/rainbow.png" :alt="TVShow.original_language">, {{TVShow.vote_average}}
-    </div>
+
+    <article v-for="TVShow in store.TVShowList">
+      <TVSeriesApp :TVShow="TVShow" :flagsAvailable="flagsAvailable"/>
+    </article>
+
   </main>
 </template>
 
