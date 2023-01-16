@@ -39,7 +39,8 @@ export default {
         :originalTitle="film.original_title" 
         :originalLanguageFlag="getImgPath(film.original_language)"
         :originalLanguage="film.original_language"
-        :voteAverage="film.vote_average"/>
+        :voteAverage="film.vote_average"
+        :posterPath="film.poster_path"/>
     </article>
 
     <h1>TV series</h1>
@@ -50,13 +51,14 @@ export default {
         :originalTitle="TVShow.original_name" 
         :originalLanguageFlag="getImgPath(TVShow.original_language)"
         :originalLanguage="TVShow.original_language"
-        :voteAverage="TVShow.vote_average"/>
+        :voteAverage="TVShow.vote_average"
+        :posterPath="TVShow.poster_path"/>
     </article>
 
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   img{
     width: 30px;
   }

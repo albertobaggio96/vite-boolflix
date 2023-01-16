@@ -1,23 +1,37 @@
 <script>
+import PosterApp from './PosterApp.vue';
+
 export default {
   name: "TVShowApp",
+
+  components:{
+    PosterApp,
+  },
+
   props: [
   "title",
   "originalTitle",
   "originalLanguage",
   "originalLanguageFlag",
-  "voteAverage"
+  "voteAverage",
+  "posterPath"
   ],
 }
 </script>
 
 <template>
-    <span>{{ title }}, </span>
-    <span>{{ originalTitle }}, </span>
-    <img :src="originalLanguageFlag" :alt="originalLanguage">
-    <span>{{ voteAverage }}</span>
+
+  <PosterApp :posterPath="posterPath"/>
+  
+  <span>{{ title }}, </span>
+  <span>{{ originalTitle }}, </span>
+  <img :src="originalLanguageFlag" :alt="originalLanguage">
+  <span>{{ voteAverage }}</span>
+
 </template>
 
-<style lang="scss">
-  
+<style lang="scss" scoped>
+  img{
+    width: 30px;
+  }
 </style>
