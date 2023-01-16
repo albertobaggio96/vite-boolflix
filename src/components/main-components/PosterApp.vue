@@ -27,6 +27,11 @@ export default {
   </div>
 </template>
 
-<style lang="scss">
-  
+<style lang="scss" scoped>
+  img{
+    width: 342px;
+    height: 513px;
+    object-fit: cover;
+    object-position: top;
+  }
 </style>

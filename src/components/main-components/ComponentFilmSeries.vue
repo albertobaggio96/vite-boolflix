@@ -26,12 +26,16 @@ export default {
     <PosterApp :posterPath="posterPath" :title="title"/>
   </div>
 
-  <div id="film-info">
-    <span>{{ title }}, </span>
-    <span>{{ originalTitle }}, </span>
-    <img :src="originalLanguageFlag" :alt="originalLanguage">
-    <font-awesome-icon icon="fa-solid fa-star" v-for="star in voteAverage"/>
-    <font-awesome-icon icon="fa-regular fa-star"  v-for="star in 5 - voteAverage"/>
+  <div id="info">
+    <div class="w-100">{{ title }}, </div>
+    <div>{{ originalTitle }}, </div>
+    <figure>
+      <img :src="originalLanguageFlag" :alt="originalLanguage">
+    </figure>
+    <div>
+      <font-awesome-icon icon="fa-solid fa-star" v-for="star in voteAverage"/>
+      <font-awesome-icon icon="fa-regular fa-star"  v-for="star in 5 - voteAverage"/>
+    </div>
   </div>
 
 </template>

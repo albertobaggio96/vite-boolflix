@@ -38,37 +38,61 @@ export default {
 </script>
 
 <template>
-  <main>
+  <main class="bg-dark p-4 text-white">
 
-    <section class="d-flex">
-      <article v-for="film in store.filmsList">
-        <ComponentFilmSeries  
-          :title="film.title" 
-          :originalTitle="film.original_title" 
-          :originalLanguageFlag="getImgPath(film.original_language)"
-          :originalLanguage="film.original_language"
-          :voteAverage="getUntilFiveStar(film)"
-          :posterPath="film.poster_path"/>
-      </article>
+    <section class="mb-4">
+      <h2>Film</h2>
+      <div class="d-flex">
+        <article v-for="film in store.filmsList">
+          <ComponentFilmSeries  
+            :title="film.title" 
+            :originalTitle="film.original_title" 
+            :originalLanguageFlag="getImgPath(film.original_language)"
+            :originalLanguage="film.original_language"
+            :voteAverage="getUntilFiveStar(film)"
+            :posterPath="film.poster_path"/>
+        </article>
+      </div>
     </section>
     
-    <section class="d-flex">
-      <article v-for="TVShow in store.TVShowList">
-        <ComponentFilmSeries 
-          :title="TVShow.name" 
-          :originalTitle="TVShow.original_name" 
-          :originalLanguageFlag="getImgPath(TVShow.original_language)"
-          :originalLanguage="TVShow.original_language"
-          :voteAverage="getUntilFiveStar(TVShow)"
-          :posterPath="TVShow.poster_path"/>\
-      </article>
+    <section>
+      <h2>TV show</h2>
+      <div class="d-flex">
+        <article v-for="TVShow in store.TVShowList">
+          <ComponentFilmSeries 
+            :title="TVShow.name" 
+            :originalTitle="TVShow.original_name" 
+            :originalLanguageFlag="getImgPath(TVShow.original_language)"
+            :originalLanguage="TVShow.original_language"
+            :voteAverage="getUntilFiveStar(TVShow)"
+            :posterPath="TVShow.poster_path"/>\
+        </article>
+      </div>
     </section>
 
   </main>
 </template>
 
-<style lang="scss" scoped>
-  img{
-    width: 30px;
+<style lang="scss">
+
+  main section{
+    width: 100%;
+    overflow-x: auto;
+  }
+  article{
+    #info{
+      display: none;
+      width: 342px;
+      height: 513px;
+    }
+    &:hover{
+      #info{
+        display: inline-block;
+        
+      }
+      #poster{
+        display: none
+      }
+    }
   }
 </style>
