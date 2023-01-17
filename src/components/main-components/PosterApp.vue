@@ -27,16 +27,5 @@ export default {
 </script>
 
 <template>
-  <div>
-    <img :src="getPoster()" :alt="title">
-  </div>
+    <img :src="getPoster()" :alt="title" class="w-100 h-100">
 </template>
-
-<style lang="scss" scoped>
-  img{
-    width: 342px;
-    height: 513px;
-    object-fit: cover;
-    object-position: top;
-  }
-</style>

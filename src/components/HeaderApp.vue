@@ -12,7 +12,6 @@ export default {
       apiMovieURL: "https://api.themoviedb.org/3/search/movie",
       apiTVShowURL: "https://api.themoviedb.org/3/search/tv",
       apiKey: "7dadc080d7d03f1afb5d7530f5f79af4"
-
     }
   },
   methods: {
@@ -50,8 +49,15 @@ export default {
         .then(function () {
           // always executed
         });
+    },
+
+    giveApiKeyToStore(){
+      this.store.apiKey = this.apiKey
     }
   },
+  created(){
+    this.giveApiKeyToStore()
+  }
 }
 </script>
 

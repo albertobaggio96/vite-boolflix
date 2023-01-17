@@ -21,8 +21,6 @@ export default {
   },
   methods:{
 
-    
-
     getImgPath(imgPath){
       imgPath = this.flagsAvailable.includes(imgPath) ? imgPath : "rainbow";
       return new URL(`../assets/img/${imgPath}.png`, import.meta.url).href;
@@ -53,22 +51,26 @@ export default {
             :originalLanguageFlag="getImgPath(film.original_language)"
             :originalLanguage="film.original_language"
             :voteAverage="getUntilFiveStar(film)"
-            :posterPath="film.poster_path"/>
+            :posterPath="film.poster_path"
+            :id="film.id"
+            :apiKey="store.apiKey"/>
         </article>
       </div>
     </section>
-    
+
     <section>
       <h2>TV show</h2>
       <div class="d-flex">
-        <article v-for="TVShow in store.TVShowList">
+        <article v-for="TVShow in store.TVShowList" >
           <ComponentFilmSeries 
             :title="TVShow.name" 
             :originalTitle="TVShow.original_name" 
             :originalLanguageFlag="getImgPath(TVShow.original_language)"
             :originalLanguage="TVShow.original_language"
             :voteAverage="getUntilFiveStar(TVShow)"
-            :posterPath="TVShow.poster_path"/>
+            :posterPath="TVShow.poster_path"
+            :id="TVShow.id"
+            :apiKey="store.apiKey"/>
         </article>
       </div>
     </section>
@@ -89,12 +91,12 @@ export default {
       height: 513px;
     }
     &:hover{
+      figure#poster{
+        display: none
+      }
       #info{
         display: inline-block;
         
-      }
-      #poster{
-        display: none
       }
     }
   }
