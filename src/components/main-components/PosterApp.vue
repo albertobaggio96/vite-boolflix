@@ -15,7 +15,12 @@ export default {
   },
   methods:{
     getPoster(){
-      return `${this.imgURL}${this.imgWidth}${this.posterPath}`
+      if (this.posterPath !== null){
+        return `${this.imgURL}${this.imgWidth}${this.posterPath}`
+      }
+      else{
+      return new URL(`../../assets/img/n.png`, import.meta.url).href;
+      }
     }
   }
 }

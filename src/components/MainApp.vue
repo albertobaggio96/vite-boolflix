@@ -20,6 +20,9 @@ export default {
     }
   },
   methods:{
+
+    
+
     getImgPath(imgPath){
       imgPath = this.flagsAvailable.includes(imgPath) ? imgPath : "rainbow";
       return new URL(`../assets/img/${imgPath}.png`, import.meta.url).href;
@@ -65,7 +68,7 @@ export default {
             :originalLanguageFlag="getImgPath(TVShow.original_language)"
             :originalLanguage="TVShow.original_language"
             :voteAverage="getUntilFiveStar(TVShow)"
-            :posterPath="TVShow.poster_path"/>\
+            :posterPath="TVShow.poster_path"/>
         </article>
       </div>
     </section>

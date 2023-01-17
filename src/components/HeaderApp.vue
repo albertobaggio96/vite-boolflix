@@ -26,7 +26,6 @@ export default {
         .then((response) =>{
           console.log(response.data.results);
           this.store.filmsList = response.data.results
-          console.log(this.store.filmsList)
         })
         .catch(function (error) {
           console.log(error);
@@ -44,7 +43,6 @@ export default {
         .then((response) =>{
           console.log(response.data.results);
           this.store.TVShowList = response.data.results
-          console.log(this.store.TVShowList)
         })
         .catch(function (error) {
           console.log(error);
