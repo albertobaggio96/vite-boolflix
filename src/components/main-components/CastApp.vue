@@ -11,7 +11,8 @@ export default {
   data() {
     return {
       creditsURL: "https://api.themoviedb.org/3/movie/",
-      castList : [],
+      nameCastList:[],
+      allCast : false
     }
   },
   methods: {
@@ -25,9 +26,10 @@ export default {
         }
       })
         .then((response) =>{
-          // console.log(response.data.cast);
-          this.castList = response.data.cast
-          console.log(this.castList)
+          response.data.cast.forEach(cast =>{
+            this.nameCastList.push(cast.name)
+          })
+
         })
         .catch(function (error) {
           console.log(error);
@@ -35,19 +37,25 @@ export default {
         .then(function () {
           // always executed
         });
-    }
+    },
   },
   created(){
     this.getCastInfo()
     this.getCastInfo()
+    
   }
 }
 
 </script>
 
 <template >
-  <div v-for="cast in castList">
-    {{ cast.name }}
+  <div v-if="nameCastList.length > 5 && !allCast">
+    <p>{{ nameCastList.slice(0, 4).join(", ") }}...</p>
+    <button class="btn btn-light" @click="allCast = !allCast">See all</button>
+  </div>
+  <div v-else @mouseleave="allCast = false">
+    <p >{{ nameCastList.join(", ") }}</p>
+    <button class="btn btn-light" v-if="nameCastList.length > 5" @click="allCast = !allCast">See less</button>
   </div>
 </template>
 

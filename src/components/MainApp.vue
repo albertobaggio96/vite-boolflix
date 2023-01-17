@@ -96,7 +96,7 @@ export default {
       }
       #info{
         display: inline-block;
-        
+        overflow-y: auto;
       }
     }
   }
