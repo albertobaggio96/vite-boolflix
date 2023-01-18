@@ -50,7 +50,7 @@ export default {
 
 <template >
   <div v-if="nameCastList.length > 5 && !allCast">
-    <p>{{ nameCastList.slice(0, 4).join(", ") }}...</p>
+    <p>{{ nameCastList.slice(0, 5).join(", ") }}...</p>
     <button class="btn btn-light" @click="allCast = !allCast">See all</button>
   </div>
   <div v-else @mouseleave="allCast = false">
